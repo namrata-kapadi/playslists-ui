@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { PlayslistsService } from 'src/app/core/services/playslists.service';
 import { PlayList } from '../../models/play-list/play-list.model';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-playlist',
@@ -11,7 +12,7 @@ export class PlaylistComponent implements OnInit {
 
   playList: PlayList;
 
-  constructor(private playslistsService: PlayslistsService) { }
+  constructor(@Inject(DOCUMENT) private document: Document, private playslistsService: PlayslistsService) { }
 
   ngOnInit(): void {
 
@@ -25,8 +26,9 @@ export class PlaylistComponent implements OnInit {
 
   }
 
-  openList() {
-    console.log('open list');
+  // another way to redirect
+  openList(url: string): void {
+    this.document.location.href = url;
   }
 
 }
