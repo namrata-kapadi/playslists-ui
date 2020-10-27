@@ -25,4 +25,8 @@ export class PlaylistComponent implements OnInit {
 
   }
 
+  openList() {
+    console.log('open list');
+  }
+
 }

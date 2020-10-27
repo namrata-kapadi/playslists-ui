@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class PlayslistsService {
 
-  url: 'https://portal.organicfruitapps.com/programming-guides/v2/us_en-us/featured-playlists.json'
+  url = 'https://portal.organicfruitapps.com/programming-guides/v2/us_en-us/featured-playlists.json';
 
   constructor(private http: HttpClient) { }
 
