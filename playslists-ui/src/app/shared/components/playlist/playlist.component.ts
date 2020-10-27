@@ -20,11 +20,20 @@ export class PlaylistComponent implements OnInit {
       data => {
         if (data) {
           this.playList = data;
+          this.playList.featuredPlaylists.content.sort((a, b) => {
+            if (a.name < b.name) {
+              return -1;
+            }
+            if (a.name > b.name) {
+              return 1;
+            }
+          });
         }
       }
     );
 
   }
+
 
   // another way to redirect
   openList(url: string): void {
